@@ -7,6 +7,8 @@ import PostDetailsPage from "./pages/PostDetailsPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoutes/ProtectedRoute.jsx";
+import ProtectedAuthRoute from "./ProtectedRoutes/ProtectedAuthRoute.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -14,10 +16,21 @@ function App() {
       path: "",
       element: <AuthLayout />,
       children: [
-        { path: "login", element: <LoginPage /> },
+        {
+          path: "login",
+          element: (
+            <ProtectedAuthRoute>
+              <LoginPage />
+            </ProtectedAuthRoute>
+          ),
+        },
         {
           path: "register",
-          element: <RegisterPage />,
+          element: (
+            <ProtectedAuthRoute>
+              <RegisterPage />
+            </ProtectedAuthRoute>
+          ),
         },
       ],
     },
@@ -25,10 +38,21 @@ function App() {
       path: "",
       element: <MainLayout />,
       children: [
-        { index: true, element: <FeedPage /> },
+        {
+          index: true,
+          element: (
+            <ProtectedRoute>
+              <FeedPage />
+            </ProtectedRoute>
+          ),
+        },
         {
           path: "post-details",
-          element: <PostDetailsPage />,
+          element: (
+            <ProtectedRoute>
+              <PostDetailsPage />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "profile",

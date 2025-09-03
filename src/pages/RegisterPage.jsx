@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../utils/FormValidation.js";
 import { registerApi } from "../services/AuthServices.js";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -34,8 +36,10 @@ export default function RegisterPage() {
       setSuccessMsg("");
     } else {
       setErrorMsg("");
-      console.log(data);
       setSuccessMsg(data.message);
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000);
     }
   }
   return (
@@ -127,6 +131,12 @@ export default function RegisterPage() {
               {successMsg}
             </p>
           )}
+          <p>
+            Already have an account?
+            <Link to={"/login"} className="text-primary-500 ml-3">
+              login now
+            </Link>
+          </p>
         </div>
       </form>
     </div>

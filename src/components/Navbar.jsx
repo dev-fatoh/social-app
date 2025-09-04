@@ -5,19 +5,24 @@ import {
   NavbarItem,
   Button,
 } from "@heroui/react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { counterContext } from "../contexts/counterContext";
+import { authContext } from "../contexts/authContext";
 
 export default function Navbar() {
-  const isLoggedIn = localStorage.getItem("token") != null;
+  const { counter } = useContext(counterContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(authContext);
   const navigate = useNavigate();
   function logOut() {
     localStorage.removeItem("token");
+    setIsLoggedIn(false);
     navigate("/login");
   }
   return (
     <HeroUiNav>
       <NavbarBrand>
-        <p className="font-bold text-inherit">circle</p>
+        <p className="font-bold text-inherit">circle {counter}</p>
       </NavbarBrand>
       <NavbarContent
         className="hidden sm:flex gap-4"

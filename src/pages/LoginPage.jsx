@@ -5,10 +5,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../utils/LoginSchema.js";
 import { loginApi } from "../services/AuthServices.js";
+import { useContext } from "react";
+import { authContext } from "../contexts/authContext.jsx";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const { setIsLoggedIn } = useContext(authContext);
   const navigate = useNavigate();
   const {
     handleSubmit,
@@ -29,6 +32,7 @@ export default function LoginPage() {
     console.log(data);
     if (data.message == "success") {
       localStorage.setItem("token", data.token);
+      setIsLoggedIn(true);
       navigate("/");
     } else {
       setErrorMsg(data);

@@ -7,11 +7,9 @@ import {
 } from "@heroui/react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { counterContext } from "../contexts/counterContext";
 import { authContext } from "../contexts/authContext";
 
 export default function Navbar() {
-  const { counter } = useContext(counterContext);
   const { isLoggedIn, setIsLoggedIn } = useContext(authContext);
   const navigate = useNavigate();
   function logOut() {
@@ -22,7 +20,7 @@ export default function Navbar() {
   return (
     <HeroUiNav>
       <NavbarBrand>
-        <p className="font-bold text-inherit">circle {counter}</p>
+        <p className="font-bold text-inherit">circle</p>
       </NavbarBrand>
       <NavbarContent
         className="hidden sm:flex gap-4"

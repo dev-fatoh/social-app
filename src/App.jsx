@@ -47,7 +47,7 @@ function App() {
           ),
         },
         {
-          path: "post-details",
+          path: "post-details/:id",
           element: (
             <ProtectedRoute>
               <PostDetailsPage />

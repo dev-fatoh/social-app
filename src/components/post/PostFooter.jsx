@@ -1,7 +1,10 @@
-const PostFooter = () => {
+import { useNavigate } from "react-router-dom";
+
+const PostFooter = ({ postId }) => {
+  const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-3 w-full px-5 my-3 border-t border-divider pt-4">
-      <button className="flex flex-row justify-center items-center w-full space-x-3">
+    <div className="grid grid-cols-3 justify-items-center w-full px-5 my-3 border-t border-divider pt-4">
+      <button className="flex flex-row justify-center items-center w-fit space-x-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={27}
@@ -17,7 +20,10 @@ const PostFooter = () => {
         </svg>
         <span className="font-semibold text-lg text-gray-600">like</span>
       </button>
-      <button className="flex flex-row justify-center items-center w-full space-x-3">
+      <button
+        onClick={() => navigate("/post-details/" + postId)}
+        className="flex flex-row justify-center items-center w-fit space-x-3"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={27}
@@ -33,7 +39,7 @@ const PostFooter = () => {
         </svg>
         <span className="font-semibold text-lg text-gray-600">comments</span>
       </button>
-      <button className="flex flex-row justify-center items-center w-full space-x-3">
+      <button className="flex flex-row justify-center items-center w-fit space-x-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={27}

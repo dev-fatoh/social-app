@@ -6,9 +6,8 @@ import {
   Button,
 } from "@heroui/react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../contexts/authContext";
-import { base } from "framer-motion/client";
 
 export default function Navbar() {
   const { isLoggedIn, setIsLoggedIn } = useContext(authContext);
@@ -25,9 +24,11 @@ export default function Navbar() {
       maxWidth="2xl"
       className="bg-gray-900 text-white"
     >
-      <NavbarBrand>
-        <p className="font-bold text-inherit">circle</p>
-      </NavbarBrand>
+      <Link to={"/"}>
+        <NavbarBrand>
+          <p className="font-bold text-inherit">circle</p>
+        </NavbarBrand>
+      </Link>
       <NavbarContent
         className="hidden sm:flex gap-4"
         justify="center"

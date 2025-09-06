@@ -16,7 +16,7 @@ const Post = ({ post }) => {
         image={post.image}
         commentsLength={post.comments.length}
       />
-      <PostFooter />
+      <PostFooter postId={post.id} />
     </div>
   );
 };

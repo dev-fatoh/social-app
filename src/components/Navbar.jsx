@@ -8,6 +8,7 @@ import {
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../contexts/authContext";
+import { base } from "framer-motion/client";
 
 export default function Navbar() {
   const { isLoggedIn, setIsLoggedIn } = useContext(authContext);
@@ -18,7 +19,12 @@ export default function Navbar() {
     navigate("/login");
   }
   return (
-    <HeroUiNav>
+    <HeroUiNav
+      isBlurred={false}
+      isBordered
+      maxWidth="2xl"
+      className="bg-gray-900 text-white"
+    >
       <NavbarBrand>
         <p className="font-bold text-inherit">circle</p>
       </NavbarBrand>

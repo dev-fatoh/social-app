@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const PostFooter = ({ postId }) => {
   const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-3 justify-items-center w-full px-5 my-3 border-t border-divider pt-4">
+    <div className="grid grid-cols-3 justify-items-center w-full px-5 md:px-1 my-3 border-t border-divider pt-4">
       <button className="flex flex-row justify-center items-center w-fit space-x-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"

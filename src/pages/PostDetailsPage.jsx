@@ -17,5 +17,9 @@ export default function PostDetailsPage() {
       getPost();
     }
   }, [id]);
-  return <div className="mx-auto w-3xl">{post && <Post post={post} />}</div>;
+  return (
+    <div className="mx-auto w-full md:w-1/2">
+      {post && <Post post={post} />}
+    </div>
+  );
 }

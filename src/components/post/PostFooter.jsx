@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 const PostFooter = ({ postId }) => {
   const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-3 justify-items-center w-full px-5 md:px-1 my-3 border-t border-divider pt-4">
-      <button className="flex flex-row justify-center items-center w-fit space-x-3">
+    <div className="grid grid-cols-3 gap-10 md:gap-3 justify-items-center w-full px-3 my-3 border-t border-divider pt-4">
+      <button className="flex flex-row justify-center items-center w-fit space-x-1 md:space-x-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={27}
-          height={27}
+          width="30%"
+          height="30%"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#838383"
@@ -18,16 +18,18 @@ const PostFooter = ({ postId }) => {
         >
           <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
         </svg>
-        <span className="font-semibold text-lg text-gray-600">like</span>
+        <span className="font-semibold text-sm md:text-lg text-gray-600">
+          like
+        </span>
       </button>
       <button
         onClick={() => navigate("/post-details/" + postId)}
-        className="flex flex-row justify-center items-center w-fit space-x-3"
+        className="flex flex-row justify-center items-center w-fit space-x-1 md:space-x-3"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={27}
-          height={27}
+          width="30%"
+          height="30%"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#838383"
@@ -37,13 +39,15 @@ const PostFooter = ({ postId }) => {
         >
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         </svg>
-        <span className="font-semibold text-lg text-gray-600">comments</span>
+        <span className="font-semibold text-sm md:text-lg text-gray-600">
+          comments
+        </span>
       </button>
-      <button className="flex flex-row justify-center items-center w-fit space-x-3">
+      <button className="flex flex-row justify-center items-center w-fit space-x-1 md:space-x-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={27}
-          height={27}
+          width="30%"
+          height="30%"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#838383"
@@ -57,7 +61,9 @@ const PostFooter = ({ postId }) => {
           <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
           <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
         </svg>
-        <span className="font-semibold text-lg text-gray-600">share</span>
+        <span className="font-semibold text-sm md:text-lg text-gray-600">
+          share
+        </span>
       </button>
     </div>
   );

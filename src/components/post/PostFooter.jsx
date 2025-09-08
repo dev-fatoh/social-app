@@ -6,9 +6,8 @@ const PostFooter = ({ postId }) => {
     <div className="grid grid-cols-3 gap-10 md:gap-3 justify-items-center w-full px-3 my-3 border-t border-divider pt-4">
       <button className="flex flex-row justify-center items-center w-fit space-x-1 md:space-x-3">
         <svg
+          className="w-[1.5rem] h-[1.5rem]"
           xmlns="http://www.w3.org/2000/svg"
-          width="30%"
-          height="30%"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#838383"
@@ -27,9 +26,8 @@ const PostFooter = ({ postId }) => {
         className="flex flex-row justify-center items-center w-fit space-x-1 md:space-x-3"
       >
         <svg
+          className="w-[1.5rem] h-[1.5rem]"
           xmlns="http://www.w3.org/2000/svg"
-          width="30%"
-          height="30%"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#838383"
@@ -45,9 +43,8 @@ const PostFooter = ({ postId }) => {
       </button>
       <button className="flex flex-row justify-center items-center w-fit space-x-1 md:space-x-3">
         <svg
+          className="w-[1.5rem] h-[1.5rem]"
           xmlns="http://www.w3.org/2000/svg"
-          width="30%"
-          height="30%"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#838383"

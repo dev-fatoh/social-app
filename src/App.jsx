@@ -9,8 +9,10 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoutes/ProtectedRoute.jsx";
 import ProtectedAuthRoute from "./ProtectedRoutes/ProtectedAuthRoute.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
+  const queryCient = new QueryClient();
   const router = createBrowserRouter([
     {
       path: "",
@@ -67,7 +69,9 @@ function App() {
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryCient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </>
   );
 }

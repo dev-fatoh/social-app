@@ -2,9 +2,10 @@ import { getAllPostsApi } from "../services/PostsServices";
 import LoadingScreen from "./LoadingScreen";
 import Post from "../components/Post.jsx";
 import { useQuery } from "@tanstack/react-query";
+import CreatePost from "../components/CreatePost.jsx";
 
 export default function FeedPage() {
-  const { isPending, data, status, error } = useQuery({
+  const { data, status, error } = useQuery({
     queryKey: ["posts"],
     queryFn: getAllPostsApi,
   });
@@ -34,6 +35,7 @@ export default function FeedPage() {
   }
   return (
     <div className="grid gap-3 max-w-4xl mx-auto">
+      <CreatePost />
       {data.posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}

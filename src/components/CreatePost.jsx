@@ -111,7 +111,7 @@ const CreatePost = () => {
       ) : (
         <button
           onClick={() => setShowForm(true)}
-          className="w-full cursor-pointer text-left text-gray-500 hover:text-gray-700 border-3 border-gray-200 rounded-lg p-3"
+          className="block w-full cursor-pointer text-left text-gray-500 hover:text-gray-700 border-3 border-gray-200 rounded-lg p-4 mx-auto"
         >
           what's in your mind ? share post
         </button>

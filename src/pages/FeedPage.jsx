@@ -34,7 +34,7 @@ export default function FeedPage() {
     return <LoadingScreen />;
   }
   return (
-    <div className="grid gap-3 max-w-4xl mx-auto">
+    <div className="grid gap-3 w-full md:max-w-4xl mx-auto">
       <CreatePost />
       {data.posts.map((post) => (
         <Post key={post.id} post={post} />

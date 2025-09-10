@@ -29,7 +29,6 @@ export default function LoginPage() {
     setIsLoading(true);
     const data = await loginApi(formData);
     setIsLoading(false);
-    console.log(data);
     if (data.message == "success") {
       localStorage.setItem("token", data.token);
       setIsLoggedIn(true);
@@ -39,7 +38,7 @@ export default function LoginPage() {
     }
   }
   return (
-    <div className="max-w-xl py-10 mx-auto my-10 p-4 shadow-2xl rounded-2xl">
+    <div className="max-w-xl py-10 mx-auto my-10 p-4 md:shadow-2xl md:rounded-2xl">
       <form onSubmit={handleSubmit(handleLogin)}>
         <h1 className="text-center my-5">Login</h1>
         <div className="flex flex-col gap-6">

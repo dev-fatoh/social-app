@@ -18,12 +18,7 @@ export default function Navbar() {
     navigate("/login");
   }
   return (
-    <HeroUiNav
-      isBlurred={false}
-      isBordered
-      maxWidth="2xl"
-      className="bg-gray-900 text-white"
-    >
+    <HeroUiNav isBlurred={false} isBordered className="bg-gray-900 text-white">
       <Link to={"/"}>
         <NavbarBrand>
           <p className="font-bold text-inherit">circle</p>

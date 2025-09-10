@@ -43,7 +43,7 @@ export default function RegisterPage() {
     }
   }
   return (
-    <div className="max-w-xl py-10 mx-auto my-10 p-4 shadow-2xl rounded-2xl">
+    <div className="max-w-xl py-10 mx-auto my-10 p-4 md:shadow-2xl md:rounded-2xl">
       <form onSubmit={handleSubmit(handleRegister)}>
         <h1 className="text-center my-5">Register</h1>
         <div className="flex flex-col gap-6">

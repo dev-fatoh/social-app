@@ -18,3 +18,16 @@ export async function loginApi(formData) {
     return error.response ? error.response.data.error : error.message;
   }
 }
+
+export async function getUserData() {
+  try {
+    const { data } = await axios.get(baseUrl + "users/profile-data", {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    });
+    return data;
+  } catch (error) {
+    return error.response.data;
+  }
+}
